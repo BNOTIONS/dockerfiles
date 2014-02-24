@@ -1,7 +1,7 @@
 Graphite
 ===
 
-This is a modified version of [nickstenning/graphite](https://github.com/nickstenning/dockerfiles/tree/master/graphite) that works with the lastest version of docker (0.8.1) and supports setting the django SECRET_KEY via environment variable.
+This is a modified version of [nickstenning/graphite](https://github.com/nickstenning/dockerfiles/tree/master/graphite) that works with the latest version of docker (0.8.1) and supports setting the django SECRET_KEY via environment variable.
 
 
 Ports
@@ -47,7 +47,7 @@ Running
 
 	`docker run -v /data/graphite:/opt/graphite/storage/whisper -e SECRET_KEY='random-secret-key' -d bnotions/graphite`
 
-* Publish all ports from host and mount data volume from host
+* Publish all ports to host and mount data volume from host
 
 	`docker run -p 80:80 -p 2003:2003 -p 2004:2004 -p 7002:7002 -v /data/graphite:/opt/graphite/storage/whisper -e SECRET_KEY='random-secret-key' -d bnotions/graphite`
 
