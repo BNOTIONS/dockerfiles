@@ -1,7 +1,7 @@
 Graphite
 ===
 
-This is a modified version of [nickstenning/graphite](https://github.com/nickstenning/dockerfiles/tree/master/graphite) that works with the lastest version of docker (0.8.1).
+This is a modified version of [nickstenning/graphite](https://github.com/nickstenning/dockerfiles/tree/master/graphite) that works with the lastest version of docker (0.8.1) and supports setting the django SECRET_KEY via environment variable.
 
 
 Ports
