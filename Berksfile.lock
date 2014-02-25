@@ -6,6 +6,9 @@
     "docker": {
       "locked_version": "0.31.0"
     },
+    "packer": {
+      "locked_version": "0.3.0"
+    },
     "apt": {
       "locked_version": "2.1.1"
     },
@@ -47,6 +50,9 @@
     },
     "yum-epel": {
       "locked_version": "0.2.0"
+    },
+    "ark": {
+      "locked_version": "0.4.2"
     }
   }
 }
