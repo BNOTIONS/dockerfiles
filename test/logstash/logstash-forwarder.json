@@ -1,0 +1,19 @@
+{
+  "network": {
+    "servers": ["localhost:9514"],
+    "ssl ca": "/vagrant/test/logstash/ssl/logstash-forwarder.crt",
+    "ssl key": "/vagrant/test/logstash/ssl/logstash-forwarder.key",
+    "timeout": 15
+  },
+  "files": [
+    {
+      "paths": [
+        "/var/log/syslog",
+        "/var/log/*.log"
+      ],
+      "fields": {
+        "type": "syslog"
+      }
+    }
+  ]
+}
