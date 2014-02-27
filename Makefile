@@ -4,6 +4,7 @@ build: openjdk
 	docker build -t bnotions/kibana /vagrant/kibana
 	docker build -t bnotions/elasticsearch /vagrant/elasticsearch
 	docker build -t bnotions/logstash /vagrant/logstash
+	docker build -t bnotions/graphite /vagrant/graphite
 
 openjdk:
 	docker build -t bnotions/openjdk-7 /vagrant/openjdk-7

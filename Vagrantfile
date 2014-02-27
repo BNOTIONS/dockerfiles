@@ -9,6 +9,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network :forwarded_port, guest: 80, host: 8080
   config.vm.network :forwarded_port, guest: 9200, host: 9200
+  config.vm.network :forwarded_port, guest: 9292, host: 9292
+  config.vm.network :forwarded_port, guest: 9514, host: 9514
 
   config.omnibus.chef_version = :latest
   config.berkshelf.enabled = true
