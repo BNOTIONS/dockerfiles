@@ -8,6 +8,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://192.168.2.31/vagrant/boxes/ubuntu-12.04-docker.box"
 
   config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 2003, host: 2003
+  config.vm.network :forwarded_port, guest: 2004, host: 2004
+  config.vm.network :forwarded_port, guest: 7002, host: 7002
   config.vm.network :forwarded_port, guest: 9200, host: 9200
   config.vm.network :forwarded_port, guest: 9292, host: 9292
   config.vm.network :forwarded_port, guest: 9514, host: 9514
