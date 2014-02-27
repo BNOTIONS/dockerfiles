@@ -8,15 +8,15 @@ run apt-get -y update
 run apt-get -y install python-ldap python-cairo python-django python-twisted python-django-tagging python-simplejson python-memcache python-pysqlite2 python-support python-pip gunicorn supervisor nginx-light
 run pip install whisper
 run pip install --install-option="--prefix=/opt/graphite" --install-option="--install-lib=/opt/graphite/lib" carbon
-run pip install --install-option="--prefix=/opt/graphite" --install-option="--install-lib=/opt/graphite/app" graphite-web
+run pip install --install-option="--prefix=/opt/graphite" --install-option="--install-lib=/opt/graphite/webapp" graphite-web
 
 # Add system service config
 add ./nginx.conf /etc/nginx/nginx.conf
 add ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Add graphite config
-add ./initial_data.json /opt/graphite/app/graphite/initial_data.json
-add ./local_settings.py /opt/graphite/app/graphite/local_settings.py
+add ./initial_data.json /opt/graphite/webapp/graphite/initial_data.json
+add ./local_settings.py /opt/graphite/webapp/graphite/local_settings.py
 add ./carbon.conf /opt/graphite/conf/carbon.conf
 add ./storage-schemas.conf /opt/graphite/conf/storage-schemas.conf
 run mkdir -p /opt/graphite/storage/whisper
@@ -24,7 +24,7 @@ run touch /opt/graphite/storage/graphite.db /opt/graphite/storage/index
 run chown -R www-data /opt/graphite/storage
 run chmod 0775 /opt/graphite/storage /opt/graphite/storage/whisper
 run chmod 0664 /opt/graphite/storage/graphite.db
-run cd /opt/graphite/app/graphite && python manage.py syncdb --noinput
+run cd /opt/graphite/webapp/graphite && python manage.py syncdb --noinput
 
 # Nginx
 expose  80
