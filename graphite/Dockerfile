@@ -19,12 +19,9 @@ add ./initial_data.json /opt/graphite/webapp/graphite/initial_data.json
 add ./local_settings.py /opt/graphite/webapp/graphite/local_settings.py
 add ./carbon.conf /opt/graphite/conf/carbon.conf
 add ./storage-schemas.conf /opt/graphite/conf/storage-schemas.conf
-run mkdir -p /opt/graphite/storage/whisper
-run touch /opt/graphite/storage/graphite.db /opt/graphite/storage/index
-run chown -R www-data /opt/graphite/storage
-run chmod 0775 /opt/graphite/storage /opt/graphite/storage/whisper
-run chmod 0664 /opt/graphite/storage/graphite.db
-run cd /opt/graphite/webapp/graphite && python manage.py syncdb --noinput
+
+add ./run.sh /run.sh
+run chmod +x /run.sh
 
 # Nginx
 expose  80
@@ -35,6 +32,8 @@ expose  2004
 # Carbon cache query port
 expose  7002
 
-cmd ["/usr/bin/supervisord"]
+volume ["/opt/graphite/storage"]
+
+cmd ["/run.sh"]
 
 # vim:ts=8:noet:
