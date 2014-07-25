@@ -15,8 +15,6 @@ add ./nginx.conf /etc/nginx/nginx.conf
 add ./config.template.js /opt/config.template.js
 add ./start.sh /opt/start.sh
 
-run chown -R www-data:www-data /opt
-
 # Nginx
 expose  80
 
